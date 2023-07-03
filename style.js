@@ -8,9 +8,6 @@ let html = "";
 let addPopup = "";
 
 async function getMeal(mealValue) {
-    // const link = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${mealValue}`;
-    // const promise = await fetch(`${link}`);
-
     const promise = await fetch(`${mealValue}`);
     const data = await promise.json();
     return data;
@@ -22,6 +19,7 @@ async function getDetail(id) {
     return dataDetail;
 }
 async function getRecipe(idMeal) {
+    addPopup = "";
     let dataDetail = await getDetail(idMeal);
     addPopup += `
       <div class="popup">
@@ -55,6 +53,7 @@ function closePopup() {
 closePopup();
 
 search.addEventListener("click", async function () {
+    addList.innerHTML = "";
     const link = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${inputMeal.value}`;
     if (!inputMeal.value) {
         alert("No input search");
