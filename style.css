@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    position: relative;
+    height: 90vh;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+input {
+    outline: none;
+    border: none;
+}
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+h1 {
+    margin-top: 50px;
+}
+.quote {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+.author {
+    font-style: italic;
+    margin-top: 8px;
+}
+.barSearch {
+    display: flex;
+    margin: 50px auto;
+    width: 40%;
+    height: 50px;
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 2px solid rgb(232, 89, 38);
+    background-color: rgb(232, 89, 38);
+}
+.barSearch .search {
+    width: 10%;
+    height: auto;
+    background-color: rgb(232, 89, 38);
+    color: white;
+    font-size: 25px;
+}
+.barSearch input {
+    width: 90%;
+    padding: 10px 20px;
+    border: none;
+    font-size: 20px;
+    color: rgb(232, 89, 38);
+}
+.barSearch input::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgb(241, 186, 166);
+}
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    width: 70%;
+    margin: 20px auto;
+}
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.card .picture img {
+    transition: 0.5s;
+}
+.card:hover .picture img {
+    transform: scale(1.1);
+}
+.card .picture {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.card h4 {
+    font-size: 25px;
+    margin-top: 20px;
+}
+.card .detail {
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 2rem;
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: rgb(232, 89, 38);
+    color: rgb(255, 255, 255);
+}
+.outPopup {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.438);
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+}
+.outPopup.active {
+    opacity: 1;
+    visibility: visible;
+}
+.popup {
+    position: absolute;
+    max-height: 90vh;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    background-color: rgb(232, 89, 38);
+    border-radius: 20px;
+    overflow: auto;
+    /* opacity: 0;
+  visibility: hidden; */
+}
+.outPopup.active .popup {
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+}
+.popup::-webkit-scrollbar {
+    width: 8px;
+}
+.popup::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.353);
+    height: 30px;
+}
+.popup .nameMeal {
+    color: white;
+    font-size: 35px;
+}
+.popup .type {
+    margin-top: 20px;
+    text-transform: capitalize;
+    color: rgb(232, 89, 38);
+}
+.popup .type span {
+    background-color: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+.popup h4 {
+    margin-top: 50px;
+    font-size: 25px;
+    color: white;
+}
+.popup .content {
+    color: white;
+    padding: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.popup .popupPicture {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.popup a {
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.close {
+    position: absolute;
+    background-color: white;
+    color: rgb(232, 89, 38);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.close i {
+    margin: auto;
+    font-size: 50px;
+    cursor: pointer;
+}
+@media (max-width: 992px) {
+    .list {
+        gap: 30px;
+        width: 90%;
+    }
+    .barSearch {
+        width: 60%;
+    }
+}
+@media (max-width: 768px) {
+    .list {
+        gap: 20px;
+    }
+    .barSearch {
+        width: 80%;
+    }
+}
+@media (max-width: 480px) {
+    .quote {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .barSearch {
+        width: 90%;
+        margin: 30px auto;
+    }
+    .card h4 {
+        font-size: 18px;
+    }
+    .card .detail {
+        font-size: 14px;
+        margin-top: 10px;
+        padding: 10px 30px;
+    }
+    .barSearch input {
+        width: 80%;
+        padding: 8px 20px;
+        font-size: 18px;
+    }
+    .barSearch .search {
+        width: 20%;
+        font-size: 20px;
+    }
+}
